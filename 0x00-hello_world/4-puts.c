@@ -1,8 +1,7 @@
 #include <stdio.h>
-/*
- *puts c
+/**
  *main - function start
- *return - zero as it is a print/puts function
+ *Return: zero as it is a print/puts function
  */
 
 int main(void)
