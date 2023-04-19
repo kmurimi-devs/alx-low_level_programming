@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include "main.h"
+
 /**
-  * _atoi - converts a string to an integer
-  * @s: string to be converted
-  * Return: the int converted from the string
-  */
+ * _atoi - converts a string to an integer
+ * @s: string to be converted
+ *
+ * Return: the int converted from the string
+ */
 int _atoi(char *s)
 {
 	int i, d, n, len, f, digit;
@@ -40,28 +42,33 @@ int _atoi(char *s)
 
 	if (f == 0)
 		return (0);
+
 	return (n);
 }
 
 /**
-  *main - print the product of two numerical arguments
-  *@argc: number of arguements passed
-  *@argv: array of arguements passed
-  *Return: (0) if success, (1) if failed
-  */
+ * main - multiplies two numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: 0 (Success), 1 (Error)
+ */
 int main(int argc, char *argv[])
 {
-	int result, n1, n2;
+	int result, num1, num2;
 
-	if (argc != 2)
+	if (argc < 3 || argc > 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	n1 = _atoi(argv[1]);
-	n2 = _atoi(argv[2]);
-	result = n1 * n2;
+
+	num1 = _atoi(argv[1]);
+	num2 = _atoi(argv[2]);
+	result = num1 * num2;
 
 	printf("%d\n", result);
+
 	return (0);
 }
+
