@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "lists.h"
+#include "list.h"
 
 /**
  * print_list - print the elements of a linked list
@@ -10,6 +10,7 @@
 size_t print_list(const list_t *h)
 {
 	size_t s = 0;
+
 	while (h)
 	{
 		if (!h->str)
