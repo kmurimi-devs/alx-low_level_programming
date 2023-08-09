@@ -27,7 +27,8 @@ int main(int argc, char *argv[]) {
         return 3;
     }
 
-    if (header.e_ident[0] != 0x7f || header.e_ident[1] != 'E' || header.e_ident[2] != 'L' || header.e_ident[3] != 'F') {
+    if (header.e_ident[EI_MAG0] != ELFMAG0 || header.e_ident[EI_MAG1] != ELFMAG1 ||
+        header.e_ident[EI_MAG2] != ELFMAG2 || header.e_ident[EI_MAG3] != ELFMAG3) {
         fprintf(stderr, "Error: Not an ELF file\n");
         close(fd);
         return 4;
@@ -153,3 +154,4 @@ int main(int argc, char *argv[]) {
     close(fd);
     return 0;
 }
+
